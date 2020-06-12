@@ -149,7 +149,7 @@ def rename_default_branch(
     is_flag=True,
 )
 @click.option("--version", help="Print the version number", is_flag=True)
-def main(
+def _main(
     token: Optional[str],
     current: str,
     target: str,
@@ -194,5 +194,9 @@ def main(
     return 0
 
 
+def main():
+    return _main(auto_envvar_prefix="RENAME_GITHUB")
+
+
 if __name__ == "__main__":
-    sys.exit(main(auto_envvar_prefix="RENAME_GITHUB"))
+    sys.exit(_main(auto_envvar_prefix="RENAME_GITHUB"))

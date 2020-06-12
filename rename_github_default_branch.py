@@ -93,6 +93,10 @@ def rename_default_branch(
             return
 
     else:
+        # This happens if the repo is read-only
+        if r.status_code == 403:
+            return
+
         r.raise_for_status()
 
     # Rename the default branch

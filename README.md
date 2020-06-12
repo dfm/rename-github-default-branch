@@ -4,6 +4,8 @@ This script makes it easy to rename your default branch on GitHub repositories i
 
 ## Usage
 
+### Installation
+
 To install, run
 
 ```bash
@@ -15,6 +17,8 @@ Then, create a [GitHub.com personal access token](https://github.com/settings/to
 ```bash
 export RENAME_GITHUB_TOKEN=YOUR_PERSONAL_ACCESS_TOKEN
 ```
+
+### Renaming branches on GitHub
 
 Then to rename the default branch to `main` for a specific repository (you must have write access):
 
@@ -33,3 +37,15 @@ You can also provide regular expressions to match against the repository name. F
 ```bash
 rename-github-default-branch -t main -p dfm/* -p exoplanet-dev/*
 ```
+
+### Updating local branches
+
+To update your local repository, you can run the following:
+
+```bash
+git fetch origin main
+git checkout -b main origin/main
+git branch -D master
+```
+
+where `main` is the name of the new default branch and `origin` is the name of the git remote.

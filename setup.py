@@ -16,7 +16,8 @@ def get_long_description() -> str:
 setup(
     name="rename_github_default_branch",
     use_scm_version=True,
-    description="Rename the default branch for GitHub repositories",
+    description="A Python script for bulk renaming the default branch of your "
+    "GitHub repositories using the API",
     long_description=get_long_description(),
     long_description_content_type="text/markdown",
     author="Dan Foreman-Mackey",

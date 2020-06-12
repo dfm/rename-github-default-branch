@@ -35,7 +35,7 @@ rename-github-default-branch -t main
 You can also provide regular expressions to match against the repository name. For example:
 
 ```bash
-rename-github-default-branch -t main -p dfm/* -p exoplanet-dev/*
+rename-github-default-branch -t main -p "dfm/*" -p "exoplanet-dev/*"
 ```
 
 ### Updating local branches

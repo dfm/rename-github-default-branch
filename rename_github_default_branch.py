@@ -69,6 +69,9 @@ def rename_default_branch(
     if r.status_code == 404:
         logger.info(f"no branch named {current} on {repo_name}")
         return
+    elif r.status_code == 409:
+        logger.info(f"no branches found in empty repo {repo_name}")
+        return
     r.raise_for_status()
     sha = r.json()["object"]["sha"]
 

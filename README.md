@@ -49,3 +49,9 @@ git branch -D master
 ```
 
 where `main` is the name of the new default branch and `origin` is the name of the git remote.
+
+### A note about pull requests
+
+This script *will not* change the target for open pull requests when the branch is renamed and open pull requests will continue to point at the branch that they were opened on.
+It is possible to change the target branch [in the user interface](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/changing-the-base-branch-of-a-pull-request) and it is possible that this could be automated using the API, but I have not experimented with that yet.
+
